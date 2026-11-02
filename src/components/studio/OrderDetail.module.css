@@ -1,0 +1,314 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+.backBtn {
+  display: none;
+  align-self: flex-start;
+  margin: -6px 0 -8px -10px;
+}
+
+/* ---------- Header ---------- */
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px 20px;
+}
+.headMain {
+  min-width: 0;
+}
+.title {
+  margin: 0;
+  letter-spacing: 0.03em;
+  outline: none;
+}
+.placed {
+  margin: 2px 0 0;
+  color: var(--ink-2);
+  font-size: 0.93rem;
+}
+.headSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.total {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* ---------- Status + note editor ---------- */
+.update {
+  padding: 18px 20px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--butter-soft);
+  box-shadow: var(--shadow-ink);
+}
+.updateGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: 16px;
+  align-items: start;
+}
+.noteField :global(.textarea) {
+  min-height: 92px;
+}
+.updateActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 14px;
+}
+.viewLink {
+  white-space: nowrap;
+}
+.feedback {
+  margin: 14px 0 0;
+}
+.feedback svg {
+  flex: none;
+}
+
+/* ---------- Boxes ---------- */
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.box {
+  padding: 16px 18px;
+  border: 1.5px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--card);
+  min-width: 0;
+}
+.boxTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.strong {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+.contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.93rem;
+}
+.contact li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.contact svg {
+  flex: none;
+  color: var(--ink-2);
+}
+.contact a {
+  overflow-wrap: anywhere;
+}
+.address {
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.address abbr {
+  text-decoration: none;
+}
+.giftFlag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  background: var(--sky-soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+/* ---------- Commission briefs ---------- */
+.sectionTitle {
+  margin: 0 0 12px;
+}
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.brief {
+  padding: 18px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+.briefHead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+}
+.briefTitle {
+  min-width: 0;
+}
+.briefName {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.briefMeta {
+  margin: 2px 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+.briefPrice {
+  font-weight: 800;
+}
+.briefList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--paper-2);
+}
+.briefList > div {
+  min-width: 0;
+}
+/* Long free-text answers take the full width */
+.briefList > div[data-wide] {
+  grid-column: 1 / -1;
+}
+.briefList dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.briefList dd {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+.briefList > div[data-empty] dd {
+  color: var(--ink-3);
+}
+.refs {
+  margin-top: 14px;
+}
+.refsLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--ink-2);
+}
+.refList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ref {
+  display: block;
+  width: 104px;
+  height: 104px;
+  padding: 4px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sticker);
+  transition: transform 0.15s ease;
+}
+.ref:hover {
+  transform: rotate(-2deg) scale(1.04);
+}
+.ref img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- History ---------- */
+.history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.history li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.history time {
+  color: var(--ink-2);
+  font-weight: 700;
+}
+.paid {
+  margin: 14px 0 0;
+}
+
+@media (max-width: 960px) {
+  .backBtn {
+    display: inline-flex;
+  }
+}
+@media (max-width: 640px) {
+  .updateGrid,
+  .twoCol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .briefList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .briefHead {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .briefPrice {
+    grid-column: 2;
+  }
+  .ref {
+    width: 88px;
+    height: 88px;
+  }
+  .headSide {
+    flex-direction: row;
+    align-items: center;
+  }
+}

@@ -1,0 +1,44 @@
+.pill {
+  --c: var(--sky);
+  --bg: var(--sky-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.2em 0.7em 0.2em 0.55em;
+  border-radius: 999px;
+  border: 1.5px solid rgba(45, 42, 50, 0.22);
+  background: var(--bg);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c);
+  border: 1.5px solid var(--ink);
+  flex: none;
+}
+.pill[data-status='sketching'] {
+  --c: var(--butter);
+  --bg: var(--butter-soft);
+}
+.pill[data-status='awaiting-approval'] {
+  --c: var(--tomato);
+  --bg: var(--tomato-soft);
+}
+.pill[data-status='inking-coloring'] {
+  --c: var(--plum);
+  --bg: #ece7f5;
+}
+.pill[data-status='shipped'] {
+  --c: var(--sage);
+  --bg: var(--sage-soft);
+}
+.pill[data-status='delivered'] {
+  --c: var(--sage-dark);
+  --bg: #d6ecdd;
+}

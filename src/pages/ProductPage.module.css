@@ -1,0 +1,254 @@
+.page {
+  padding-top: clamp(18px, 3vw, 28px);
+  padding-bottom: clamp(48px, 7vw, 88px);
+}
+
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink-2);
+  margin-bottom: clamp(16px, 3vw, 28px);
+}
+.crumbs a {
+  color: var(--ink-2);
+  text-underline-offset: 3px;
+}
+.crumbs a:hover {
+  color: var(--ink);
+}
+.crumbs [aria-current] {
+  color: var(--ink);
+}
+
+/* Two columns on desktop: sticky drawings on the left, the builder on the right. */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  grid-template-areas:
+    'gallery head'
+    'gallery form';
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(32px, 5vw, 72px);
+}
+.galleryCol {
+  grid-area: gallery;
+  min-width: 0;
+}
+.sticky {
+  position: sticky;
+  top: calc(var(--header-h) + 22px);
+}
+@media (max-height: 760px) {
+  .sticky {
+    position: static;
+  }
+}
+.head {
+  grid-area: head;
+  min-width: 0;
+  padding-bottom: 8px;
+}
+.formCol {
+  grid-area: form;
+  min-width: 0;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+.tagline {
+  margin-bottom: 18px;
+}
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 14px;
+}
+.price {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--tomato-dark);
+}
+.priceTail {
+  font-weight: 800;
+  color: var(--ink);
+}
+.priceRow :global(.badge) {
+  align-self: center;
+}
+.desc {
+  color: var(--ink-2);
+  margin-bottom: 18px;
+}
+.head :global(.notice) svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+/* How it works */
+.how {
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+}
+.howHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 24px;
+}
+.howHead h2 {
+  margin: 0;
+}
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.step {
+  position: relative;
+  padding: 26px 20px 20px;
+}
+.stepNum {
+  position: absolute;
+  top: -16px;
+  left: 18px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--butter);
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.35rem;
+  transform: rotate(-5deg);
+}
+.step:nth-child(2) .stepNum {
+  background: var(--blush);
+  transform: rotate(4deg);
+}
+.step:nth-child(3) .stepNum {
+  background: var(--sage);
+}
+.step:nth-child(4) .stepNum {
+  background: var(--sky);
+  transform: rotate(6deg);
+}
+.stepTitle {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  line-height: 1.05;
+  margin: 0 0 8px;
+}
+.stepBody {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* More drawings */
+.moreGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+}
+.moreFig {
+  margin: 0;
+}
+.moreFig img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.moreCaption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+/* Not found */
+.notFound {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.notFoundTurtle {
+  margin-bottom: 18px;
+  transform: rotate(-6deg);
+}
+.notFoundList {
+  list-style: none;
+  margin: 8px 0 28px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.notFoundList a {
+  text-decoration: none;
+}
+
+@media (max-width: 1060px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 30px;
+  }
+}
+
+@media (max-width: 920px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'head'
+      'gallery'
+      'form';
+    grid-template-rows: auto;
+  }
+  .sticky {
+    position: static;
+  }
+  .galleryCol {
+    margin: 12px 0 8px;
+  }
+  .page {
+    /* room for the sticky "Add to cart" bar */
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .moreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .moreGrid li:nth-child(3) {
+    display: none;
+  }
+  .price {
+    font-size: 2.4rem;
+  }
+}

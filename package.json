@@ -1,0 +1,32 @@
+{
+  "name": "luny-turtle-store",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Demo website and commission store for Luny Turtle (@artbylunyturtle). Runs locally with a small Express server, or as a static demo on Vercel. Checkout is a demo with no real payments.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/index.js",
+    "build": "tsc --noEmit && vite build",
+    "build:vercel": "tsc --noEmit && vite build --mode vercel",
+    "start": "node server/index.js --prod",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/gaegu": "^5.2.0",
+    "@fontsource/nunito": "^5.2.0",
+    "express": "^4.22.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "^6.30.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
